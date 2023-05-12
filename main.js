@@ -24,12 +24,21 @@ generateGrid(gridEl, dimensionGridEl);
  */
 function generateGrid(grid, dimension) {
     dimension = parseInt(dimension);
+
+    // assegnare alla cella i numeri da min a max (dimension)
+    const whiteList = [];
+    for (let i = 0; i < dimension; i++) {
+        whiteList.push(i + 1);
+    }
+
     // ciclo per generare n cella in base al parametro dimension
     for (let i = 0; i < dimension; i++) {
         // creo l'elemento cella
         const cella = document.createElement("div");
         // aggiungo classe css alla cella
         cella.classList.add("square");
+        // numero da 1 a 100 assegnati alle celle in ordine crescente
+        cella.append(whiteList[i]);
         // al click la cella si colora all'interno e stampa un mex in console 
         cella.addEventListener(
             "click",

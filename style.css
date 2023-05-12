@@ -7,6 +7,8 @@
     height: 50vh;
 
     border: 1px solid black;
+
+    cursor: crosshair;
 }
 
 /* CELLE */
@@ -14,10 +16,13 @@
     width: calc(100% / 10);
     height: calc(100% / 10);
 
+    text-align: center;
     border: 1px solid red;
 }
 
 /* CLICK SULLA CELLA */
 .active {
     background-color: rgb(93, 165, 212);
+
+    color: #fff;
 }
