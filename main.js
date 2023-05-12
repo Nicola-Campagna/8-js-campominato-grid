@@ -3,6 +3,8 @@ const gridEl = document.getElementById("tabella");
 // numero celle delle tabella
 const dimensionGridEl = 100;
 
+
+
 // invochiamo la funzione per generare la tabella di gioco
 generateGrid(gridEl, dimensionGridEl);
 
@@ -28,7 +30,16 @@ function generateGrid(grid, dimension) {
         const cella = document.createElement("div");
         // aggiungo classe css alla cella
         cella.classList.add("square");
+        // al click la cella si colora all'interno e stampa un mex in console 
+        cella.addEventListener(
+            "click",
+            function () {
+                this.classList.toggle("active");
+                console.log("cella cliccata: " + (i + 1));
+            }
+        )
         // appendo l'elemento cella nella tabella di gioco
         grid.append(cella);
     }
+
 }
