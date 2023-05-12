@@ -1,0 +1,17 @@
+#tabella {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 10rem;
+    height: 50vh;
+
+    border: 1px solid black;
+}
+
+.square {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+
+    border: 1px solid red;
+
+}
