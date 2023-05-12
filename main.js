@@ -1,16 +1,18 @@
-// tabella di gioco
-const gridEl = document.getElementById("tabella");
-// numero celle delle tabella
-const dimensionGridEl = 100;
+// bottone per creare tabella di gioco
+const btnEl = document.getElementById("start");
 
-
-
-// invochiamo la funzione per generare la tabella di gioco
-generateGrid(gridEl, dimensionGridEl);
-
-
-
-
+// AL CLICK DEL BOTTONE GENERA LA TABELLA DI GIOCO
+btnEl.addEventListener(
+    "click",
+    function () {
+        // tabella di gioco
+        const gridEl = document.getElementById("tabella");
+        // numero celle delle tabella
+        const dimensionGridEl = 100;
+        // invochiamo la funzione per generare la tabella di gioco
+        generateGrid(gridEl, dimensionGridEl);
+    }
+)
 
 /*****************************
  *        FUNCTIONS
@@ -23,6 +25,7 @@ generateGrid(gridEl, dimensionGridEl);
  * @param {int} dimension valore che indica numero di caselle
  */
 function generateGrid(grid, dimension) {
+    grid.innerHTML = "";
     dimension = parseInt(dimension);
 
     // assegnare alla cella i numeri da min a max (dimension)
