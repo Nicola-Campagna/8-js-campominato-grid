@@ -1,3 +1,8 @@
+body {
+    background-color: rgb(46, 88, 136);
+
+}
+
 /* TABELLA DI GIOCO */
 #tabella {
     display: flex;
@@ -6,23 +11,41 @@
     margin: 10rem;
     height: 50vh;
 
-    /* border: 1px solid black; */
-
-    cursor: crosshair;
 }
 
-/* CELLE */
+/*******************
+*     CELLE
+********************/
+
+/* DEFAULT livello FACILE */
 .square {
     width: calc(100% / 10);
     height: calc(100% / 10);
 
-    text-align: center;
-    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    border: 1px solid rgb(93, 165, 212);
+
+    cursor: crosshair;
+}
+
+/* livello MEDIO */
+.square.medium {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+/* livello DIFFICILE */
+.square.hard {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
 /* CLICK SULLA CELLA */
 .active {
-    background-color: rgb(93, 165, 212);
-
-    color: #fff;
+    background-color: lightgreen;
+    color: #000;
 }
