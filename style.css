@@ -27,7 +27,7 @@ body {
     align-items: center;
 
     color: #fff;
-    border: 1px solid rgb(93, 165, 212);
+    border: 1px solid rgb(204, 81, 177);
 
     cursor: crosshair;
 }
@@ -46,6 +46,21 @@ body {
 
 /* CLICK SULLA CELLA */
 .active {
-    background-color: lightgreen;
+    background-color: rgb(222, 245, 20);
     color: #000;
+}
+
+.title {
+    color: rgb(4, 117, 4);
+
+    border: 1px solid rgb(4, 117, 4);
+    border-radius: 5px;
+
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.title:hover {
+    background-color: rgb(4, 117, 4);
+    color: #fff;
 }
