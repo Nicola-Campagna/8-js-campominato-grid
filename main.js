@@ -7,9 +7,10 @@ btnEl.addEventListener(
     function () {
         // tabella di gioco
         const gridEl = document.getElementById("tabella");
-        // numero celle delle tabella
+        const difficultyEl = document.getElementById("difficulty");
+        const levelEl = difficultyEl.value;
         // invochiamo la funzione per generare la tabella di gioco
-        generateGrid(gridEl, 1);
+        generateGrid(gridEl, levelEl);
     }
 )
 
@@ -25,9 +26,26 @@ btnEl.addEventListener(
  */
 
 function generateGrid(grid, difficolta) {
+    // svuoto la griglia prima di crearne un'altra 
     grid.innerHTML = "";
-    // per 100 volte richiama la funzione generateCella
-    for (let i = 0; i < 100; i++) {
+
+    // numero celle in base alla difficolta di gioco
+    let numeroCelle;
+    // livello DIFFICILE
+    if (difficolta == 3) {
+        numeroCelle = 49;
+    }
+    // livello MEDIO
+    else if (difficolta == 2) {
+        numeroCelle = 81;
+    }
+    // livello FACILE
+    else {
+        numeroCelle = 100;
+    }
+
+    // per numerocelle volte richiama la funzione generateCella
+    for (let i = 0; i < numeroCelle; i++) {
         // assegniamo alla cella un numero progressivo da 1 a 100
         const testoCella = (i + 1);
         // variabile d'appoggio e invochiamo la funzione passando la i nella funzione generateCella attraverso il parametro
@@ -51,6 +69,14 @@ function generateCella(difficolta, testo) {
     const cellaEl = document.createElement("div");
     // aggiungo classe css alla cella
     cellaEl.classList.add("square");
+
+    // aggiungo classi css a seconda della difficoltà del gioco 
+    if (difficolta == 3) {
+        cellaEl.classList.add("hard");
+    } else if (difficolta == 2) {
+        cellaEl.classList.add("medium");
+    }
+
     // la cella nel DOM avrà un numero progressivo da 1 a 100
     cellaEl.innerHTML = testo;
     // al click la cellaEl si accende o spegne e manda un mex in console
@@ -58,7 +84,7 @@ function generateCella(difficolta, testo) {
         "click",
         function () {
             this.classList.toggle("active");
-            console.log("cella cliccata: " + testo);
+            console.log("cella cliccata: " + this.innerHTML);
         }
     )
 
